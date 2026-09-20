@@ -45,7 +45,8 @@ def crt(a_list,n_list): # Chinese Remainder Theorem - [x ≡ a (mod N)]
 
     return sum(x_list) % N
 
+# Logic bài toán
 from sympy import integer_nthroot
 m_3 = crt(C,N)
-m,b = integer_nthroot(m_3)
+m,b = integer_nthroot(m_3,3)
 print(long_to_bytes(m).decode())
