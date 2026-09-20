@@ -211,7 +211,52 @@ m = (tu*pow(mau,-1,n)) % n
 flag = bytes.fromhex(hex(m)[2:])
 print(flag.decode())  
 ```
-    
+
+
+> [!CAUTION]
+> Hai bài bên mã hoá đối xứng này chủ yếu em prompt AI để biết hướng giải chứ không đào sâu.
+# TheStranger
+## chall.py
+<img width="390" height="530" alt="image" src="https://github.com/user-attachments/assets/b6e3e810-76d3-4bb3-9b14-1b61205fbfa9" />
+
+## Phân tích bài toán
+- Đây là một bài thuộc nhánh mã hoá đối xứng.
+- flag được mã hoá với seed ngẫu nhiên. Ta biết seed này sẽ nằm trong khoảng từ 0 đến $2^16$ vì hàm urandom(2) sinh ra 2 bytes tương ứng 16 bits số tổ hợp của 16 bits này tương đương $2^16 = 65536$ khả năng.
+- Trong file cho ta hai hàm role8() và encrypt() ta hoàn toàn có đủ khả năng đảo ngược lại hai hàm này sau đó brute-force tìm ra seed.
+
+## Python code
+```python
+
+def rol8_rev(x, r):
+    r %= 8
+    if r == 0:
+        return x
+    return ((x >> r) | (x << (8 - r))) & 0xff
+
+def decrypt(cipher, seed):
+    x = seed
+    plain = bytearray()
+
+    for i, b in enumerate(cipher):
+        x = (25173 * x + 13849) & 0xffff
+        k = ((x >> 8) ^ (x & 0xff)) & 0xff
+
+        y = b ^ k
+        y = rol8_rev(y, (i % 7) + 1)
+        orig_b = (y - 17 * i) & 0xff
+        plain.append(orig_b)
+
+    return bytes(plain)
+
+cipher = bytes.fromhex("fbddb8266b34605eb52a2f2d5b18d5b42f9a8d81e4738985e41b6f64ad6085115de5534c")
+for seed in range(65537):
+    flag = decrypt(cipher,seed)
+
+    if flag.startswith(b"KCSC{"):
+        print(flag.decode())
+        break
+```
+
     
     
     
