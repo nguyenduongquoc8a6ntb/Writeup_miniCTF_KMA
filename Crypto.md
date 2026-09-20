@@ -4,7 +4,7 @@
 
 ## Phân tích bài toán
 - Trong file chall.py ta thấy tác giả cố ý cho chạy vòng lặp 3 lần để mã hoá m (giá trị của **flag** sau khi bytes_to_long(m)). Ta thu được ba giá trị $n$ và $c$ trong 2 mảng $N,C$.
-- Ta gọi mỗi giá trị trong $C$ là $c_1$,$c_2$,$c_3$ và trong $N$ là $n_1$,$n_2$,$n_3$.
+- Ta gọi mỗi giá trị trong $C$ là $c_1$, $c_2$, $c_3$ và trong $N$ là $n_1$, $n_2$, $n_3$.
   - Ta có:
     
     > $m^3 \equiv c_1 \pmod n_1$ <br>
