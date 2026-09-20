@@ -79,8 +79,10 @@ print(long_to_bytes(m).decode())
 - Ta biết $1 \le k < e$ vì:
   
   - Ta biết:
+    
     > $dp < p - 1$ vì phần dư luôn nhỏ hơn số chia.
   - Nhân hai vế với e sau đó trừ 1 cho hai vế:
+    
     > $dp.e - 1 < (p-1)e - 1$ <br>
     > $\iff k.(p-1) < e(p-1) - 1 < e(p-1)$
     > $\iff k<e$
