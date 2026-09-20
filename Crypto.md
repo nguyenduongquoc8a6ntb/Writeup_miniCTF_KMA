@@ -257,6 +257,50 @@ for seed in range(65537):
         break
 ```
 
+
+# SisyphusRNG
+## chall.py
+<img width="356" height="508" alt="image" src="https://github.com/user-attachments/assets/d128c611-9068-4153-b891-ab733de4f538" />
+
+## Phân tích bài toán
+- Đây cũng là một bài thuộc nhánh mã hoá đối xứng.
+- Trong file chall.py ta thấy tác giả tạo mảng **leak** gồm 4 số và trong 4 số này số trước liên quan đến số sau thông qua hàm step(x).
+- Flag cũng được mã hoá lần lượt các số trong mảng **leak**.
+- Ta đơn giản là brute-force để tìm ra mảng **leak** từ đó giải mã theo thứ tự ngược lại để tìm ra **flag**.
+
+## Python code
+```python
+leak = [87, 60, 150, 40]
+cipher = bytes.fromhex("3b92eff51f1713ba371f7db948006c2ea6489471dff840c6a20fdc151e02d659e5542e6267")
+
+m = 65537
+a = 31821
+c = 12345
+
+def step(x):
+    return (a * x + c) % m
+
+for test_state in range(m):
+    state = test_state
+
+    test_leak = []
+    for _ in range(4):
+        state = step(state)
+        test_leak.append(state >> 8)
+
+    if test_leak == leak:
+        flag = bytearray()
+        for b in cipher:
+            state = step(state)
+            flag.append(b ^ (state & 0xff))
+
+        print(flag.decode())
+        break
+```
+
+
+
+
     
     
     
