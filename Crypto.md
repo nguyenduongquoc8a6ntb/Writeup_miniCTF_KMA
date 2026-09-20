@@ -50,3 +50,13 @@ from sympy import integer_nthroot
 m_3 = crt(C,N)
 m,b = integer_nthroot(m_3,3)
 print(long_to_bytes(m).decode())
+```
+
+
+# PrivateMeansPrivate
+## chall.py
+<img width="520" height="405" alt="image" src="https://github.com/user-attachments/assets/010dedfd-ce97-4098-b52e-c3d4ad7af945" />
+
+## Phân tích bài toán
+- Đây là một bài RSA thông thường nhưng tác giải cho to biết $dp = =d \bmod{p-1}$.
+
