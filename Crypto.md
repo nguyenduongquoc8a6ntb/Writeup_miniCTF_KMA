@@ -3,7 +3,7 @@
 <img width="486" height="396" alt="image" src="https://github.com/user-attachments/assets/1bcdea7b-1a0b-4e56-b0ea-78380306a95a" />
 
 ## Phân tích bài toán
-- Trong file chall.py ta thấy tác giả cố ý cho chạy vòng lặp 3 lần để mã hoá m (giá trị của **flag** sau khi bytes_to_long(m)). Ta thu được ba giá trị $n$ và $c$ trong 2 mảng $N,C$.
+- Trong file chall.py ta thấy tác giả cố ý cho chạy vòng lặp 3 lần để mã hoá m (giá trị của **flag** sau khi bytes_to_long()). Ta thu được ba giá trị $n$ và $c$ trong 2 mảng $N,C$.
 - Ta gọi mỗi giá trị trong $C$ là $c_1$, $c_2$, $c_3$ và trong $N$ là $n_1$, $n_2$, $n_3$.
   - Ta có:
     
