@@ -78,7 +78,7 @@ print(long_to_bytes(m).decode())
 - Chuyển vế ta thu được: $p = [(e.dp - 1)/k] + 1$.
 - Ta biết $1 \le k < e$ vì:
   
-  - Ta biết:
+  - Ta có:
     
     > $dp < p - 1$ vì phần dư luôn nhỏ hơn số chia.
   - Nhân hai vế với e sau đó trừ 1 cho hai vế:
