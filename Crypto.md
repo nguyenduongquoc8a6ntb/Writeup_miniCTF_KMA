@@ -64,15 +64,47 @@ print(long_to_bytes(m).decode())
 - Ta biến đổi:
   > $dp = d \bmod{(p-1)} \iff d = t.(p-1) + dp$
   - Nhân $e$ vào 2 vế:
+    
     > $d.e = t_1.(p-1).e + dp.e$
   - Mà ta biết:
+    
     > $d.e = t_2.\phi n + 1 \iff d.e = t_2(p-1)(q-1) + 1$
   - Kết hợp hai phương trình:
+    
     > - $t_1(p-1)e + dp.e = t_2(p-1)(q-1) + 1$ <br>
     > $\iff dp.e -1 = t_2(p-1)(q-1) + 1 - t_1(p-1)e$ <br>
     > $\iff dp.e -1 = (p-1)[t_2.(q-1)-t_1.e]$ <br>
-  - Với $t_2.(q-1)-t_1.e$ là hằng số ta đặt là k. Khi đó $dp.e - 1 = k.(p-1)$ thì $dp.e - 1$ chính là một bội của $(p-1)$.
-- chuyển vế ta thu được: $p = ((e.dp - 1)/k) + 1$.
+  - Với $t_2.(q-1)-t_1.e$ là hằng số ta đặt là k, Khi đó $dp.e - 1 = k.(p-1)$ thì $dp.e - 1$ chính là một bội của $(p-1)$.
+- Chuyển vế ta thu được: $p = [(e.dp - 1)/k] + 1$.
 - Ta biết $1 \le k < p-e$ vì:
-  >
+  
+  - Ta biết:
+    > $dp < p - 1$ vì phần dư luôn nhỏ hơn số chia.
+  - Nhân hai vế với e sau đó trừ 1 cho hai vế:
+    > $dp.e - 1 < (p-1)e - 1$ <br>
+    > $\iff k.(p-1) < e(p-1) - 1 < e(p-1)$
+    > $\iff k<e$
+- Để tìm ra **flag** ta brute-force giá trị k từ 1 đến $e$ để tìm $p$. Nếu $n /bmod p = 0$ thì đó là $p$ đúng.
+
+## Python code
+```python
+n = 17933844014668288781101082296839404540185958114363900663980182726457867609572866270173248191587544410168818310433797
+e = 65537
+dp = 2104594675241281760675171840981611646923801292320309511153
+c = 1986022583739945836122659941907174160804165451697456928488146621762051590120192187187103291037729656532513119385748
+
+for k in range(1,e):
+    p_temp = ((dp*e - 1)//k) + 1
+    if n%p == 0:
+        p = p_temp
+        break
+
+q = n//p
+phi_n = (p-1)(q-1)
+d = pow(e,-1,phi_n)
+m = pow(c,d,n)
+flag = bytes.fromhex(hex(m)[2:])
+print(flag.decode())   
+```
+  
   
