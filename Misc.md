@@ -1,6 +1,7 @@
 # Sanity
 - Flag nằm ở phần rule
 <img width="586" height="188" alt="image" src="https://github.com/user-attachments/assets/7e989ac3-9b74-4404-8bf2-46b4a7ea12d2" />
+
 - Dùng code python mã hoá base64
   
 ```python
