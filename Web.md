@@ -3,7 +3,7 @@
 - Phát hiện khi tra kết hợp ký tự "&&" thì những lệnh linux phía sau đều được thực thi.
 - Nhập "google.com && ls -la .." thấy xuất hiện file **flag.txt**.
 
-<img width="473" height="34" alt="image" src="https://github.com/user-attachments/assets/c0c41739-b247-42bd-906b-9b18f61646dd" />
+<img width="472" height="24" alt="image" src="https://github.com/user-attachments/assets/828ac4a8-dc76-49a0-babe-fcc3ff93b28c" />
 
 - Tiếp đó nhập "google.com && cat /flag.txt" và thu được **flag**.
 
