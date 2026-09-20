@@ -165,13 +165,13 @@ print(flag.decode())
     
     > $c_1 \equiv m_1^e (mod n)$ <br>
     > $c_2 \equiv m_2^e \equiv (a.m_1 + b)^e \pmod n$
-  - Thế số vào và khai triển phương trình 2:
+  - Khai triển phương trình 2:
     
-    > $c_2 \equiv (7.m_1)^3 + 3 .a^2 .m_1^2.b + 3 .a. m_1.b^2 + b^3 \pmod n$
+    > $c_2 \equiv (a.m_1)^3 + 3 .a^2 .m_1^2.b + 3 .a. m_1.b^2 + b^3 \pmod n$
   - Thay $m_1^3 = c_1$ vào:
     
     > $3.a^2.b.m_1^2 + 3.a.b.m_1 + b^3 + 7^3.c_1 - c_2 \equiv 0 \pmod n$ <br>
-    > Đặt $A = 3a^2b$ ; $B = 3ab$ ; $C = b^3 + 7^3.c_1 - c_2$ <br>
+    > Đặt $A = 3a^2b$ ; $B = 3ab^2$ ; $C = b^3 + 7^3.c_1 - c_2$ <br>
     > $\iff A.m_1^2 + B.m_1 + C \equiv 0 \pmod n$ (*pt1)
   - Nhân $m_1$ vào 2 vế của phương trình $A.m_1^2 + B.m_1 + C \equiv 0 \pmod n$ và thế tiếp $m_1^3 = c_1$:
     
@@ -201,13 +201,13 @@ c1 = 252570629913433201625916952036404116346939760061007257123376065839247997404
 c2 = 9356628025080978760786033586597600417965633533084603805720768081665730641291953841364730283704598671839730489094921
 
 A = 3*a*a*b
-B = 3*a*b
+B = 3*a*b*b
 C = (b**3) + (7**3)*c1 - c2
 
-tu = A*A*c1 - B*C
-mau = B*B - A*C
+tu = (A*A*c1 - B*C) % n
+mau = (B*B - A*C) % n
 
-m = tu*pow(mau,-1,n)
+m = (tu*pow(mau,-1,n)) % n
 flag = bytes.fromhex(hex(m)[2:])
 print(flag.decode())  
 ```
