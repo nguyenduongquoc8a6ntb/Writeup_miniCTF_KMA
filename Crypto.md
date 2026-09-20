@@ -162,12 +162,62 @@ print(flag.decode())
 - Vẫn là một bài RSA nhưng ta biết thêm được là $m_1 = m và m_2 = a.m_1 + b$.
 - Ta thực hiện một số theo tác biến đổi đại số:
   - Ta có:
-    > $c_1 \equiv m_1^e (mod n)$
+    
+    > $c_1 \equiv m_1^e (mod n)$ <br>
     > $c_2 \equiv m_2^e \equiv (a.m_1 + b)^e \pmod n$
   - Thế số vào và khai triển phương trình 2:
+    
     > $c_2 \equiv (7.m_1)^3 + 3 a^2 m_1 + 3 a {m_1}^2 + b^3 \pmod n$
   - Thay m_1^3 = c_1 vào:
-    > $3am_1^2$
+    
+    > $3am_1^2 + 3a^2m_1 + b^3 + (7.c_1)^3 - c_2 \equiv 0 \pmod n$ <br>
+    > Đặt $A = 3a$ ; $B = 3a^2$ ; $C = b^3 + (7.c_1)^3 - c_2 <br>
+    > $\iff A.m_1^2 + B.m_1 + C \equiv 0 \pmod n$ (*pt1)
+  - Nhân $m_1$ vào 2 vế của phương trình $A.m_1^2 + B.m_1 + C \equiv 0 \pmod n$ và thế tiếp $m_1^3 = c_1$:
+    
+    > $A.m_1^3 + B.m_1^2 + C.m_1 \equiv 0 \pmod n$ <br>
+    > $\iff B.m_1^2 + C.m_1 + A.c_1 \equiv 0 \pmod n$ (*pt2)
+  - Kết hợp *pt1 và *pt2:
+
+    > $\iff A.m_1^2 + B.m_1 + C \equiv 0 \pmod n$ (*pt1) <br>
+    > $\iff B.m_1^2 + C.m_1 + A.c_1 \equiv 0 \pmod n$ (*pt2)
+    - Nhân *pt1 với B và *pt2 với A:
+
+      > $\iff A.B.m_1^2 + B.B.m_1 + C.B \equiv 0 \pmod n$ (*pt1) <br>
+      > $\iff A.B.m_1^2 + A.C.m_1 + A.A.c_1 \equiv 0 \pmod n$ (*pt2)
+    - Lấy *pt1 trừ *pt2:
+
+      > $B^2.m_1 + C.B - A.C.m_1 - A^2.c_1 \equiv 0 \pmod n$ <br>
+      > $\iff m_1 = m \equiv (A^2.c_1 - B.C)/(B^2 - A.C) \pmod n$
+    - Ta tính được m và dễ dàng tìm được **flag**.
+
+## Python code
+```python
+n = 30312088234920121407934432295499613543121905522846713441233538453006851930268695854254832840462925326139384929212829
+e = 3
+a = 7
+b = 1337
+c1 = 25257062991343320162591695203640411634693976006100725712337606583924799740483856138600335555240434521890383550352519
+c2 = 9356628025080978760786033586597600417965633533084603805720768081665730641291953841364730283704598671839730489094921
+
+A = 3*a
+B = 3*a*a
+C = (b**3) + ((7*c1)**3) - c2
+
+tu = A*A*c1 - B*C
+mau = B*B - A*C
+
+m = tu*pow(mau,-1,n)
+flag = bytes.fromhex(hex(m)[2:])
+print(flag.decode())  
+```
+    
+    
+    
+    
+    
+
+    
 
   
 
