@@ -68,7 +68,7 @@ print(long_to_bytes(m).decode())
   - Mà ta biết:
     > $d.e = t_2.\phi n + 1 \iff d.e = t_2(p-1)(q-1) + 1$
   - Kết hợp hai phương trình:
-    > - $t.(p-1).e + dp.e = t_2(p-1)(q-1) + 1$ <br>
+    > - $t_1(p-1)e + dp.e = t_2(p-1)(q-1) + 1$ <br>
     > $\iff dp.e -1 = t_2(p-1)(q-1) + 1 - t_1(p-1)e$ <br>
     > $\iff dp.e -1 = (p-1)[t_2.(q-1)-t_1.e]$ <br>
   - Với $t_2.(q-1)-t_1.e$ là hằng số ta đặt là k. Khi đó $dp.e - 1 = k.(p-1)$ thì $dp.e - 1$ chính là một bội của $(p-1)$.\
