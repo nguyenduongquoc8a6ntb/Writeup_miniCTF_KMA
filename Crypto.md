@@ -108,5 +108,30 @@ m = pow(c,d,n)
 flag = bytes.fromhex(hex(m)[2:])
 print(flag.decode())   
 ```
+
+
+
+# RSA1
+## chall.py
+<img width="505" height="581" alt="image" src="https://github.com/user-attachments/assets/174ecd4c-82b5-43a6-8df5-19400fb5c74b" />
+
+## Phân tích bài toán
+- Từ file chall.py ta thấy tác giả thiết kế một chương trình đơn giản có 3 chức năng tạm gọi là mode 1, mode 2, mod 3.
+  - mode 1: In ra **flag** bị mã hoá. Tức là in ra $c$ với $c = m^e \bmod p$ (m = long_to_bytes(**flag)**).
+  - mode 2: Ta nhập một số $x$ bất kỳ sau đó chương trình sẽ in ra số $a = msg^e \bmod p$.
+  - mode 3: Exit.
+- Tóm lại là sau khi ta tương tác với chương trình ra sẽ thu được $a_1$, $a_2$, $c$, $e$.
+- Ta thực hiện một số phép biến đổi:
+  - Bằng cách nhập giá trị $msg = 2$ và $msg = 3$ ta thu được:
+    
+    > $a_1 = 2^e \bmod p$ <br>
+    > $a_2 = 3^e \bmod p$
+  - Hay:
+
+    > $2^e = k.p + a_1 \iff 2^e - a_1 = k.p$ <br>
+    > $3^e = k.p + a_2 \iff 3^e - a_2 = k.p$
+  - Lúc này $2^e - a_1$ và $3^e - a_2$ đều là bội của p. Do đó p = gcd($2^e-a_1$ , $3^e-a_2$).
+  
+
   
   
