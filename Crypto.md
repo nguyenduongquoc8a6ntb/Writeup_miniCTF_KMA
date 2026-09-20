@@ -58,5 +58,5 @@ print(long_to_bytes(m).decode())
 <img width="520" height="405" alt="image" src="https://github.com/user-attachments/assets/010dedfd-ce97-4098-b52e-c3d4ad7af945" />
 
 ## Phân tích bài toán
-- Đây là một bài RSA thông thường nhưng tác giải cho to biết $dp = =d \bmod{p-1}$.
+- Đây là một bài RSA thông thường nhưng tác giả cho to biết thêm dữ kiện: $dp = d \bmod{(p-1)}$.
 
