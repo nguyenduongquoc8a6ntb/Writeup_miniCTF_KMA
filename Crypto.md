@@ -221,7 +221,7 @@ print(flag.decode())
 
 ## Phân tích bài toán
 - Đây là một bài thuộc nhánh mã hoá đối xứng.
-- flag được mã hoá với seed ngẫu nhiên. Ta biết seed này sẽ nằm trong khoảng từ 0 đến $2^16$ vì hàm urandom(2) sinh ra 2 bytes tương ứng 16 bits số tổ hợp của 16 bits này tương đương $2^16 = 65536$ khả năng.
+- flag được mã hoá với seed ngẫu nhiên. Ta biết seed này sẽ nằm trong khoảng từ 0 đến $2^{16}$ vì hàm urandom(2) sinh ra 2 bytes tương ứng 16 bits số tổ hợp của 16 bits này tương đương $2^{16} = 65536$ khả năng.
 - Trong file cho ta hai hàm role8() và encrypt() ta hoàn toàn có đủ khả năng đảo ngược lại hai hàm này sau đó brute-force tìm ra seed.
 
 ## Python code
