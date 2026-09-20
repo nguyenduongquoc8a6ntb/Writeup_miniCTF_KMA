@@ -1,5 +1,5 @@
 # BroadcastAbsurdity
-## Chall.py 
+## chall.py 
 <img width="486" height="396" alt="image" src="https://github.com/user-attachments/assets/1bcdea7b-1a0b-4e56-b0ea-78380306a95a" />
 
 ## Phân tích bài toán
