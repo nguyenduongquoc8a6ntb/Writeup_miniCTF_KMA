@@ -118,7 +118,7 @@ print(flag.decode())
 ## Phân tích bài toán
 - Từ file chall.py ta thấy tác giả thiết kế một chương trình đơn giản có 3 chức năng tạm gọi là mode 1, mode 2, mod 3.
   - mode 1: In ra **flag** bị mã hoá. Tức là in ra $c$ với $c = m^e \bmod p$ (m = long_to_bytes(**flag)**).
-  - mode 2: Ta nhập một số $x$ bất kỳ sau đó chương trình sẽ in ra số $a = msg^e \bmod p$.
+  - mode 2: Ta nhập một số $msg$ bất kỳ sau đó chương trình sẽ in ra số $a = msg^e \bmod p$.
   - mode 3: Exit.
 - Tóm lại là sau khi ta tương tác với chương trình ra sẽ thu được $a_1$, $a_2$, $c$, $e$.
 - Ta thực hiện một số phép biến đổi:
