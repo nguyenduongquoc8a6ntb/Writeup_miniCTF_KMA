@@ -213,6 +213,9 @@ print(flag.decode())
 ```
 
 
+
+
+
 > [!CAUTION]
 > Hai bài bên mã hoá đối xứng này chủ yếu em prompt AI để biết hướng giải chứ không đào sâu.
 # TheStranger
