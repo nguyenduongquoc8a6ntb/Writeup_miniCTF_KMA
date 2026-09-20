@@ -86,7 +86,7 @@ print(long_to_bytes(m).decode())
     > $dp.e - 1 < (p-1)e - 1$ <br>
     > $\iff k.(p-1) < e(p-1) - 1 < e(p-1)$
     > $\iff k<e$
-- Để tìm ra **flag** ta brute-force giá trị k từ 1 đến $e$ để tìm $p$. Nếu $n / /bmodp = 0$ thì đó là $p$ đúng.
+- Để tìm ra **flag** ta brute-force giá trị k từ 1 đến $e$ để tìm $p$. Nếu $n / \bmodp = 0$ thì đó là $p$ đúng.
 
 ## Python code
 ```python
