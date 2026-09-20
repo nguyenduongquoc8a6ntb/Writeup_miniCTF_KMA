@@ -17,7 +17,7 @@
 ## Python code
 > [!CAUTION]
 > - Hàm crt() và long_to_bytes() em lấy từ thư viện cá nhân.
-> - Dùng hàm **integerr_nthroot()** trong thư viện **sympy** để khai căn bậc 3.
+> - Dùng hàm **integer_nthroot()** trong thư viện **sympy** để khai căn bậc 3.
 > - https://github.com/nguyenduongquoc8a6ntb/CryptoHack-Solutions/blob/main/Mathematics/Modular%20Math/Chinese_Remainder_Theorem.md
 
 ```python
