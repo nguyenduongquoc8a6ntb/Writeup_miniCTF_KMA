@@ -1,5 +1,5 @@
 # Writeup_miniCTF_KMA
-- PWN
+- Pwn
 - REV
 - Crypto
 - For
