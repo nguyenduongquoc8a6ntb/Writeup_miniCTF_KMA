@@ -8,5 +8,5 @@
   
 ```python
 import base64
-print(base64.b64decode("S0NTQ3t3M2xjMG0zXzRuZF93MTVoX3kwdV83aDNfYjM1N18wZl9sdWNrXzwzfQ=="))
+print(base64.b64decode("S0NTQ3t3M2xjMG0zXzRuZF93MTVoX3kwdV83aDNfYjM1N18wZl9sdWNrXzwzfQ==").decode())
 ```
