@@ -151,6 +151,17 @@ m = pow(c,d,p)
 flag = bytes.fromhex(hex(m)[2:])
 print(flag.decode())  
 ```
+
+
+
+# DoubleTexting
+## chall.py
+<img width="481" height="488" alt="image" src="https://github.com/user-attachments/assets/8ea1216f-c87c-4fbd-9c5d-329a80278dca" />
+
+## Phân tích bài toán
+- Vẫn là một bài RSA nhưng ta biết thêm được là $m_1 = m và m_2 = a.m_1 + b$.
+- 
+
   
 
   
