@@ -131,7 +131,7 @@ print(flag.decode())
     > $2^e = k.p + a_1 \iff 2^e - a_1 = k.p$ <br>
     > $3^e = k.p + a_2 \iff 3^e - a_2 = k.p$
   - Lúc này $2^e - a_1$ và $3^e - a_2$ đều là bội của p. Do đó p = gcd($2^e-a_1$ , $3^e-a_2$).
-  - Có p ta dễ dàng tìm lại được flag.
+  - Có p ta dễ dàng tìm lại được **flag**.
 
 ## Python code
 > [!CAUTION]
@@ -160,7 +160,14 @@ print(flag.decode())
 
 ## Phân tích bài toán
 - Vẫn là một bài RSA nhưng ta biết thêm được là $m_1 = m và m_2 = a.m_1 + b$.
-- 
+- Ta thực hiện một số theo tác biến đổi đại số:
+  - Ta có:
+    > $c_1 \equiv m_1^e (mod n)$
+    > $c_2 \equiv m_2^e \equiv (a.m_1 + b)^e \pmod n$
+  - Thế số vào và khai triển phương trình 2:
+    > $c_2 \equiv (7.m_1)^3 + 3 a^2 m_1 + 3 a {m_1}^2 + b^3 \pmod n$
+  - Thay m_1^3 = c_1 vào:
+    > $3am_1^2$
 
   
 
