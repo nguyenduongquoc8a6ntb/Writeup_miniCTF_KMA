@@ -1,6 +1,6 @@
 # Writeup_miniCTF_KMA
 - Pwn
-- [REV](./REV.md)
+- [REV](./Rev.md)
 - [Crypto](./Crypto.md)
 - For
 - [Web](./Web.md)
