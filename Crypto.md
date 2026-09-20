@@ -71,5 +71,8 @@ print(long_to_bytes(m).decode())
     > - $t_1(p-1)e + dp.e = t_2(p-1)(q-1) + 1$ <br>
     > $\iff dp.e -1 = t_2(p-1)(q-1) + 1 - t_1(p-1)e$ <br>
     > $\iff dp.e -1 = (p-1)[t_2.(q-1)-t_1.e]$ <br>
-  - Với $t_2.(q-1)-t_1.e$ là hằng số ta đặt là k. Khi đó $dp.e - 1 = k.(p-1)$ thì $dp.e - 1$ chính là một bội của $(p-1)$.\
+  - Với $t_2.(q-1)-t_1.e$ là hằng số ta đặt là k. Khi đó $dp.e - 1 = k.(p-1)$ thì $dp.e - 1$ chính là một bội của $(p-1)$.
+- chuyển vế ta thu được: $p = ((e.dp - 1)/k) + 1$.
+- Ta biết $1<=k<p-e$ vì:
+  >
   
