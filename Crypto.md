@@ -76,7 +76,7 @@ print(long_to_bytes(m).decode())
     > $\iff dp.e -1 = (p-1)[t_2.(q-1)-t_1.e]$ <br>
   - Với $t_2.(q-1)-t_1.e$ là hằng số ta đặt là k, Khi đó $dp.e - 1 = k.(p-1)$ thì $dp.e - 1$ chính là một bội của $(p-1)$.
 - Chuyển vế ta thu được: $p = [(e.dp - 1)/k] + 1$.
-- Ta biết $1 \le k < p-e$ vì:
+- Ta biết $1 \le k < e$ vì:
   
   - Ta biết:
     > $dp < p - 1$ vì phần dư luôn nhỏ hơn số chia.
