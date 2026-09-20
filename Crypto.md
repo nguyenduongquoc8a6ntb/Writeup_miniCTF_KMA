@@ -212,13 +212,10 @@ flag = bytes.fromhex(hex(m)[2:])
 print(flag.decode())  
 ```
 
-
-
-
-
+# TheStranger
 > [!CAUTION]
 > Hai bài bên mã hoá đối xứng này chủ yếu em prompt AI để biết hướng giải chứ không đào sâu.
-# TheStranger
+
 ## chall.py
 <img width="390" height="530" alt="image" src="https://github.com/user-attachments/assets/b6e3e810-76d3-4bb3-9b14-1b61205fbfa9" />
 
