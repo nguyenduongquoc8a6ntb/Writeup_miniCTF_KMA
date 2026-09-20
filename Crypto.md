@@ -102,7 +102,7 @@ for k in range(1,e):
         break
 
 q = n//p
-phi_n = (p-1)(q-1)
+phi_n = (p-1)*(q-1)
 d = pow(e,-1,phi_n)
 m = pow(c,d,n)
 flag = bytes.fromhex(hex(m)[2:])
