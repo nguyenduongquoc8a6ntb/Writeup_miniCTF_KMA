@@ -168,7 +168,7 @@ print(flag.decode())
   - Thế số vào và khai triển phương trình 2:
     
     > $c_2 \equiv (7.m_1)^3 + 3 a^2 m_1 + 3 a {m_1}^2 + b^3 \pmod n$
-  - Thay m_1^3 = c_1 vào:
+  - Thay $m_1^3 = c_1$ vào:
     
     > $3am_1^2 + 3a^2m_1 + b^3 + (7.c_1)^3 - c_2 \equiv 0 \pmod n$ <br>
     > Đặt $A = 3a$ ; $B = 3a^2$ ; $C = b^3 + (7.c_1)^3 - c_2 <br>
