@@ -160,7 +160,7 @@ print(flag.decode())
 
 ## Phân tích bài toán
 - Vẫn là một bài RSA nhưng ta biết thêm được là $m_1 = m$ và $m_2 = a.m_1 + b$.
-- Ta thực hiện một số theo tác biến đổi đại số:
+- Ta thực hiện một số thao tác biến đổi đại số:
   - Ta có:
     
     > $c_1 \equiv m_1^e (mod n)$ <br>
