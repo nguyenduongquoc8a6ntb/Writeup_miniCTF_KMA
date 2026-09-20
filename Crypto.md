@@ -53,10 +53,21 @@ print(long_to_bytes(m).decode())
 ```
 
 
+
+
 # PrivateMeansPrivate
 ## chall.py
 <img width="520" height="405" alt="image" src="https://github.com/user-attachments/assets/010dedfd-ce97-4098-b52e-c3d4ad7af945" />
 
 ## Phân tích bài toán
 - Đây là một bài RSA thông thường nhưng tác giả cho to biết thêm dữ kiện: $dp = d \bmod{(p-1)}$.
-
+- Ta biến đổi:
+  > $dp = d \bmod{(p-1)} \iff d = t.(p-1) + dp$
+  - Nhân $e$ vào 2 vế:
+    > $d.e = t_1.(p-1).e + dp.e$
+  - Mà ta biết:
+    > $d.e = t_2.\phin + 1 \iff d.e = t_2(p-1)(q-1) + 1$
+  - Kết hợp hai phương trình:
+    > - $t.(p-1).e + dp.e = t_2(p-1)(q-1) + 1$ <br>
+    > $\iff dp.e = t_2(p-1)(q-1) + 1 - t_1(p-1)e$ <br>
+    > $\iff dp.e = (p-1)[t_2.(q-1)-t_1.e]$
