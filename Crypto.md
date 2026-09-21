@@ -11,7 +11,7 @@
     > $m^3 \equiv c_2 \pmod {n_2}$ <br>
     > $m^3 \equiv c_3 \pmod {n_3}$
   - Lúc này ta dùng thuật toán CRT để tìm ra $m^3$.
-- Ta biết thêm một dữ kiện đó là $C_{crt} = m^3 \bmod N_{crt} \iff C_{crt} = m^3$ (do $m^3 < n_1.n_2.n_3 = N_{crt}$), khi đó chỉ cần khai căn bậc 3 là ra $m = \sqrt[3](C_{crt})$.
+- Ta biết thêm một dữ kiện đó là $C_{crt} = m^3 \bmod N_{crt} \iff C_{crt} = m^3$ (do $m^3 < n_1.n_2.n_3 = N_{crt}$), khi đó chỉ cần khai căn bậc 3 là ra $m = \sqrt[3]{C_{crt}}$.
 - Sau khi tìm ra m ta chỉ việc long_to_bytes(m) là ra **flag**.
 
 ## Python code
